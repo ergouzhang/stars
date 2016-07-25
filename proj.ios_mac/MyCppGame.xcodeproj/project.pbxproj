@@ -309,6 +309,7 @@
 		FF968A491D1BEC7F00643012 /* C11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = C11.png; sourceTree = "<group>"; };
 		FF968A4B1D1BEE1200643012 /* C10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = C10.png; sourceTree = "<group>"; };
 		FF968A511D1BEE8500643012 /* C9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = C9.png; sourceTree = "<group>"; };
+		FF9D203D1D461E9D00E2E258 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		FF9DD4AD1D388C2E0084B09F /* bigsky_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bigsky_2.png; sourceTree = "<group>"; };
 		FF9E5F9C1D44C4FC006D4D5A /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29.png"; sourceTree = "<group>"; };
 		FF9E5F9D1D44C4FC006D4D5A /* Icon-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40.png"; sourceTree = "<group>"; };
@@ -666,6 +667,7 @@
 				FF5D70D11D17D27200F05D2A /* notes.hpp */,
 				FF12D07D1D2CED8400E3C478 /* gameOverLayer.cpp */,
 				FF12D07E1D2CED8400E3C478 /* gameOverLayer.hpp */,
+				FF9D203D1D461E9D00E2E258 /* Header.h */,
 			);
 			name = Classes;
 			path = ../Classes;

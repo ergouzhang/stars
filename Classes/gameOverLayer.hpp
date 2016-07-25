@@ -47,5 +47,9 @@ public:
     
     //收集12个星座回调
     void dragon();
+    
+    //分享
+    void shareCallBack1();
+    void capCallBack1();
 };
 #endif /* gameOverLayer_hpp */

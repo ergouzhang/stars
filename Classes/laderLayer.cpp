@@ -7,8 +7,7 @@
 //
 
 #include "laderLayer.hpp"
-#define PTM_RATIO 32
-#define GAMEOVER 25
+#include "Header.h"
 
 
 laderLayer::laderLayer(int windNum, int cloudNum)
@@ -619,25 +618,22 @@ void laderLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event)
         //con10技能,风力减小
         if (UserDefault::getInstance()->getBoolForKey("CON10", false))
         {
-            x=random(60,100)*wind;
+            x=random(30,50)*wind;
             
         }
         else
         {
-            x=random(30,50)*wind;
+            x=random(60,100)*wind;
         
         }
          //引入风向
         Vector<b2Body*>::iterator iter;
-        for (iter=bodyVector.begin(); ; iter++)
+        for (iter=bodyVector.begin(); iter!=bodyVector.end(); iter++)
         {
-           if ((*iter)!=bodyVector.back()&&(*iter)!=bodyVector.front())
+            
+            if ((*iter)!=bodyVector.front()&&(*iter)!=bodyVector.back())
             {
                 (*iter)->ApplyLinearImpulse(b2Vec2(x,0), (*iter)->GetPosition(), true);
-            }
-            else
-            {
-                break;
             }
             
         }
@@ -650,62 +646,53 @@ void laderLayer::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event)
        //con10技能,风力减小
        if (UserDefault::getInstance()->getBoolForKey("CON10", false))
        {
-           x=random(80,100)*wind;
+          x=random(40,50)*wind;
            
        }
        else
        {
-           x=random(40,50)*wind;
+            x=random(80,200)*wind;
            
        }
        //引入风向
        Vector<b2Body*>::iterator iter;
-       for (iter=bodyVector.begin(); ; iter++)
+       for (iter=bodyVector.begin(); iter!=bodyVector.end(); iter++)
        {
            
-          if ((*iter)!=bodyVector.back()&&(*iter)!=bodyVector.front())
+           if ((*iter)!=bodyVector.front()&&(*iter)!=bodyVector.back())
            {
                (*iter)->ApplyLinearImpulse(b2Vec2(x,0), (*iter)->GetPosition(), true);
            }
-           else
-           {
-               break;
-           }
-           
+          
        }
 
    }
-   else if (ladderNum>=1&&reBuildNum==3)
+   else if (reBuildNum==3&&ladderNum>=1)
    {
        int x=0;
        
        //con10技能,风力减小
        if (UserDefault::getInstance()->getBoolForKey("CON10", false))
        {
-           x=random(80,100)*wind;
+            x=random(40,50)*wind;
            
        }
        else
        {
-           x=random(40,50)*wind;
+          x=random(80,100)*wind;
            
        }
        //引入风向
        
        Vector<b2Body*>::iterator iter;
-       for (iter=bodyVector.begin(); ; iter++)
+       for (iter=bodyVector.begin(); iter!=bodyVector.end(); iter++)
        {
            
-           if ((*iter)!=bodyVector.back()&&(*iter)!=bodyVector.front())
+           if ((*iter)!=bodyVector.front()&&(*iter)!=bodyVector.back())
            {
                (*iter)->ApplyLinearImpulse(b2Vec2(x,0), (*iter)->GetPosition(), true);
            }
-           else
-           {
-               break;
-           }
-
-          
+           
        }
        
 //       bodyVector.front()->ApplyLinearImpulse(b2Vec2(x, 0), bodyVector.front()->GetPosition(), true);

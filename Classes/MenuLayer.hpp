@@ -14,7 +14,10 @@
 #include "GameSceneManager.hpp"
 #include "randomStars.hpp"
 #include <string>
+#include "C2DXShareSDK.h"
 USING_NS_CC;
+
+   extern  void shareContentResultHandler(int seqId, cn::sharesdk::C2DXResponseState state, cn::sharesdk::C2DXPlatType platType, __Dictionary *result);
 
 class MenuLayer:public Layer
 {
@@ -95,6 +98,7 @@ public:
     void shareCallBack();
     MenuItemLabel* shareButton;
     void capCallBack();
+ 
 };
 
 #endif /* MenuLayer_hpp */

@@ -120,12 +120,12 @@ bool StarBookLayer::init()
     labelText->setColor(Color3B::RED);
     labelText->setDimensions(size.width/4+50, size.height/2);
     labelText->setPosition(size.width/4+50,size.height/2);
-    this->addChild(labelText,1);
+    this->addChild(labelText,1000);
     
     //日记string
-    age0String="嗯，是的，他来了！......................";
-    age10String="哦哦哦，他突然间已经10岁了！！！................ ";
-    age15String="你已经是个大人样了，但是在我眼里，你永远是那个跟我要星星的孩子。............";
+    age0String="嗯，是的，他来了！有点不知所措呀！摘颗星星送给他吧！ to be filled..";
+    age10String="哦哦哦，他突然间已经10岁了！！！走起，一起去摘星星吧！ to be filled.. ";
+    age15String="你已经是个大人样了，但是在我眼里，你永远是那个跟我要星星的孩子。只要爸爸能摘到的，一定都给你！";
     age20String="嘿，儿子。大学的生活怎么样？爸爸的眼睛越来越不中用了，感觉天上的星星越来越多啊。不过，既然你好不容易回来一次，咱们去摘星星吧！";
     age25String="一转眼他已经25岁了。他已经习惯了一个人在外生活了吧。 而且我已经不能像过去那样轻易地摘到星星了。但是总想为他做些什么。嗯，要不，就这样吧，用梯子！";
     
@@ -200,7 +200,7 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 auto markButton25=MenuItemSprite::create(bookMarkSprite25, bookMarkSprite25_s, CC_CALLBACK_1(StarBookLayer::label25Callback, this));
                 markButton25->runAction(Sequence::create(
                                                          ScaleTo::create(0, 0),
-                                                         DelayTime::create(2.0f),
+                                                         
                                                          ScaleTo::create(0.1, 0.8),
                                                          
                                                          ScaleTo::create(0.1, 1.6),
@@ -215,17 +215,20 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 
                 //大透明背景
                 //日记打字效果
-                auto bg2=Sprite::create("bg2.png");
-                bg2->setPosition(size.width/2,size.height/2);
-                this->addChild(bg2,markIndex+10);
-                bg2->setOpacity(100);
-                bg2->runAction(Sequence::create(DelayTime::create(10.0),RemoveSelf::create(), NULL));
+//                auto bg2=Sprite::create("bg2.png");
+//                bg2->setPosition(size.width/2,size.height/2);
+//                this->addChild(bg2,markIndex+10);
+//                bg2->setOpacity(255);
+//                bg2->runAction(Sequence::create(DelayTime::create(10.0),RemoveSelf::create(), NULL));
+                //labelText->setVisible(false);
+
                 dirayString=age25String;
-                labelText->setPosition(size.width/2+50,size.height/2);
-                labelText->setScale(1.5);
-                labelText->runAction(Sequence::create(DelayTime::create(10.0),Spawn::create(MoveTo::create(1.0f, Point(size.width/4+50,size.height/2)), ScaleTo::create(1.0f, 1.0f),NULL), NULL));
+            
+//                labelText->setPosition(size.width/2+50,size.height/2);
+//                labelText->setScale(1.5);
+                //labelText->runAction(Sequence::create(DelayTime::create(10.0),Spawn::create(MoveTo::create(1.0f, Point(size.width/4+50,size.height/2)), ScaleTo::create(1.0f, 1.0f),NULL), NULL));
               //  this->addChild(labelText,markIndex+11);
-                
+                               //labelText->runAction(Sequence::create(FadeIn::create(1.0), NULL));
                 this->schedule(schedule_selector(StarBookLayer::textOut), 0.05);
                 
                 
@@ -273,7 +276,7 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 
                 auto markButton25=MenuItemSprite::create(bookMarkSprite25, bookMarkSprite25_s, CC_CALLBACK_1(StarBookLayer::label25Callback, this));
                 markButton25->runAction(Sequence::create(ScaleTo::create(0, 0),
-                                                         DelayTime::create(2.0f),
+                                                        
                                                          ScaleTo::create(0.1, 0.8),
                                                          
                                                          ScaleTo::create(0.1, 1.6),
@@ -289,17 +292,19 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 
                 //大透明背景
                 //日记打字效果
-                auto bg2=Sprite::create("bg2.png");
-                bg2->setPosition(size.width/2,size.height/2);
-                this->addChild(bg2,markIndex+10);
-                bg2->setOpacity(100);
-                bg2->runAction(Sequence::create(DelayTime::create(15.0),RemoveSelf::create(), NULL));
+//                auto bg2=Sprite::create("bg2.png");
+//                bg2->setPosition(size.width/2,size.height/2);
+//                this->addChild(bg2,markIndex+10);
+//                bg2->setOpacity(255);
+//                bg2->runAction(Sequence::create(DelayTime::create(15.0),RemoveSelf::create(), NULL));
+                 //labelText->setVisible(false);
                 dirayString=age20String;
-                labelText->setPosition(size.width/2+50,size.height/2);
-                labelText->setScale(1.5);
-                labelText->runAction(Sequence::create(DelayTime::create(15.0),Spawn::create(MoveTo::create(1.0f, Point(size.width/4+50,size.height/2)), ScaleTo::create(1.0f, 1.0f),NULL), NULL));
+//                labelText->setPosition(size.width/2+50,size.height/2);
+//                labelText->setScale(1.5);
+//                labelText->runAction(Sequence::create(DelayTime::create(15.0),Spawn::create(MoveTo::create(1.0f, Point(size.width/4+50,size.height/2)), ScaleTo::create(1.0f, 1.0f),NULL), NULL));
                // this->addChild(labelText,markIndex+11);
-                
+               // labelText->runAction(Sequence::create(FadeIn::create(1.0), NULL));
+
                 this->schedule(schedule_selector(StarBookLayer::textOut), 0.05);
                 
             }
@@ -340,7 +345,7 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 
                 auto markButton25=MenuItemSprite::create(bookMarkSprite25, bookMarkSprite25_s, CC_CALLBACK_1(StarBookLayer::label25Callback, this));
                 markButton25->runAction(Sequence::create(ScaleTo::create(0, 0),
-                                                         DelayTime::create(2.0f),
+                                                        
                                                          ScaleTo::create(0.1, 0.8),
                                                          
                                                          ScaleTo::create(0.1, 1.6),
@@ -358,16 +363,16 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 
                 //大透明背景
                 //日记打字效果
-                auto bg2=Sprite::create("bg2.png");
-                bg2->setPosition(size.width/2,size.height/2);
-                this->addChild(bg2,markIndex+10);
-                bg2->setOpacity(100);
-                bg2->runAction(Sequence::create(DelayTime::create(10.0),RemoveSelf::create(), NULL));
+//                auto bg2=Sprite::create("bg2.png");
+//                bg2->setPosition(size.width/2,size.height/2);
+//                this->addChild(bg2,markIndex+10);
+//                bg2->setOpacity(255);
+//                bg2->runAction(Sequence::create(DelayTime::create(5.0),RemoveSelf::create(), NULL));
                 dirayString=age15String;
-                labelText->setPosition(size.width/2+50,size.height/2);
-                labelText->setScale(1.5);
-                labelText->runAction(Sequence::create(DelayTime::create(5.0),Spawn::create(MoveTo::create(1.0f, Point(size.width/4+50,size.height/2)), ScaleTo::create(1.0f, 1.0f),NULL), NULL));
-                //this->addChild(labelText,markIndex+11);
+//                labelText->setPosition(size.width/2+50,size.height/2);
+//                labelText->setScale(1.5);
+//                labelText->runAction(Sequence::create(DelayTime::create(5.0),Spawn::create(MoveTo::create(1.0f, Point(size.width/4+50,size.height/2)), ScaleTo::create(1.0f, 1.0f),NULL), NULL));
+//                //this->addChild(labelText,markIndex+11);
                 
                 this->schedule(schedule_selector(StarBookLayer::textOut), 0.05);
             }
@@ -409,7 +414,7 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 
                 auto markButton25=MenuItemSprite::create(bookMarkSprite25, bookMarkSprite25_s, CC_CALLBACK_1(StarBookLayer::label25Callback, this));
                 markButton25->runAction(Sequence::create(ScaleTo::create(0, 0),
-                                                         DelayTime::create(2.0f),
+                                                         
                                                          ScaleTo::create(0.1, 0.8),
                                                          
                                                          ScaleTo::create(0.1, 1.6),
@@ -426,17 +431,17 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 
                 //大透明背景
                 //日记打字效果
-                auto bg2=Sprite::create("bg2.png");
-                bg2->setPosition(size.width/2,size.height/2);
-                this->addChild(bg2,markIndex+10);
-                bg2->setOpacity(100);
-                bg2->runAction(Sequence::create(DelayTime::create(5.0),RemoveSelf::create(), NULL));
-                
+//                auto bg2=Sprite::create("bg2.png");
+//                bg2->setPosition(size.width/2,size.height/2);
+//                this->addChild(bg2,markIndex+10);
+//                bg2->setOpacity(255);
+//                bg2->runAction(Sequence::create(DelayTime::create(5.0),RemoveSelf::create(), NULL));
+//                
                 dirayString=age10String;
-                labelText->setPosition(size.width/2+50,size.height/2);
-                labelText->setScale(1.5);
-                labelText->runAction(Sequence::create(DelayTime::create(5.0),Spawn::create(MoveTo::create(1.0f, Point(size.width/4+50,size.height/2)), ScaleTo::create(1.0f, 1.0f),NULL), NULL));
-                
+//                labelText->setPosition(size.width/2+50,size.height/2);
+//                labelText->setScale(1.5);
+//                labelText->runAction(Sequence::create(DelayTime::create(5.0),Spawn::create(MoveTo::create(1.0f, Point(size.width/4+50,size.height/2)), ScaleTo::create(1.0f, 1.0f),NULL), NULL));
+//                
                 this->schedule(schedule_selector(StarBookLayer::textOut), 0.05);
                 
                 

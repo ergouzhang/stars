@@ -834,7 +834,9 @@ void MenuLayer::timeOver()
 }
 
 //sdkcallback
-void shareContentResultHandler(int seqId, cn::sharesdk::C2DXResponseState state, cn::sharesdk::C2DXPlatType platType, __Dictionary *result)
+
+
+ void shareContentResultHandler(int seqId, cn::sharesdk::C2DXResponseState state, cn::sharesdk::C2DXPlatType platType, __Dictionary *result)
 {
     switch (state)
     {

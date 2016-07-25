@@ -1,16 +1,18 @@
 {
-  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "681FF0A2C04562F675B61E731C0CDA0060E9A69C",
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "BA09F143AA85C57A6AFD29CEB968D73EE0594BC0",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "73E6C120499CF436DC55C7E77635DF70EDBF57E6" : 0,
     "681FF0A2C04562F675B61E731C0CDA0060E9A69C" : 0,
-    "73E6C120499CF436DC55C7E77635DF70EDBF57E6" : 0
+    "BA09F143AA85C57A6AFD29CEB968D73EE0594BC0" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DF9448B1-092F-4107-8342-C69DEF18BA34",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "73E6C120499CF436DC55C7E77635DF70EDBF57E6" : "",
     "681FF0A2C04562F675B61E731C0CDA0060E9A69C" : "stars%20for%20u\/",
-    "73E6C120499CF436DC55C7E77635DF70EDBF57E6" : ""
+    "BA09F143AA85C57A6AFD29CEB968D73EE0594BC0" : "stars\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "MyCppGame",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
@@ -25,6 +27,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ergouzhang\/cocos2d-x.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "73E6C120499CF436DC55C7E77635DF70EDBF57E6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ergouzhang\/stars.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "BA09F143AA85C57A6AFD29CEB968D73EE0594BC0"
     }
   ]
 }

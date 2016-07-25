@@ -9,6 +9,11 @@
 #include "gameOverLayer.hpp"
 #include <string>
 #include <algorithm>
+#include "MenuLayer.hpp"
+#include "C2DXShareSDK.h"
+
+using namespace cn::sharesdk;
+
 
 
 bool gameOverLayer::init()
@@ -452,10 +457,7 @@ void gameOverLayer::labelOverCallback()
         
     }
     
-    auto sprite=Sprite::create();
-    sprite->runAction(Sequence::create(DelayTime::create(5.0f),CallFunc::create(CC_CALLBACK_0(gameOverLayer::labelOverCallback2, this)), NULL));
-    
-    //收集12个星座后
+      //收集12个星座后
     if (dragon==12)
     {
         
@@ -463,6 +465,25 @@ void gameOverLayer::labelOverCallback()
         
     }
 
+    
+    auto okLabel=Label::createWithTTF("确定", "fonts/china.ttf", 40);
+    okLabel->setColor(Color3B::RED);
+
+    auto okButton=MenuItemLabel::create(okLabel, CC_CALLBACK_0(gameOverLayer::labelOverCallback2, this));
+    okButton->setPosition(size.width/2-80,80);
+    
+    //分享按钮
+    auto shareLabel=Label::createWithTTF("分享", "fonts/china.ttf", 40);
+    shareLabel->setColor(Color3B::RED);
+    auto shareButton=MenuItemLabel::create(shareLabel,CC_CALLBACK_0(gameOverLayer::shareCallBack1, this));
+    shareButton->setPosition(size.width/2+80,80);
+
+    auto menu=Menu::create(okButton,shareButton, NULL);
+    menu->setPosition(Point::ZERO);
+    this->addChild(menu);
+    
+    
+    
 }
 //dragon
 
@@ -472,6 +493,7 @@ void gameOverLayer::dragon()
     for (int i=0; i<12; i++)
     {
         
+        
     }
 
 
@@ -479,18 +501,111 @@ void gameOverLayer::dragon()
 
 
 
+////sdkcallback
+
+void shareContentResultHandler1(int seqId, cn::sharesdk::C2DXResponseState state, cn::sharesdk::C2DXPlatType platType, __Dictionary *result)
+{
+    switch (state)
+    {
+        case cn::sharesdk::C2DXResponseStateSuccess:
+        {
+            log("Success");
+        }
+            break;
+        case cn::sharesdk::C2DXResponseStateFail:
+        {
+            log("Fail");
+            //回调错误信息
+            __Array *allKeys = result->allKeys();
+            allKeys->retain();
+            for (int i = 0; i < allKeys-> count(); i++)
+            {
+                __String *key = (__String*)allKeys->getObjectAtIndex(i);
+                Ref *obj = result->objectForKey(key->getCString());
+                
+                log("key = %s", key -> getCString());
+                if (dynamic_cast<__String *>(obj))
+                {
+                    log("value = %s", dynamic_cast<__String *>(obj) -> getCString());
+                }
+                else if (dynamic_cast<__Integer *>(obj))
+                {
+                    log("value = %d", dynamic_cast<__Integer *>(obj) -> getValue());
+                }
+                else if (dynamic_cast<__Double *>(obj))
+                {
+                    log("value = %f", dynamic_cast<__Double *>(obj) -> getValue());
+                }
+            }
+        }
+            break;
+        case cn::sharesdk::C2DXResponseStateCancel:
+        {
+            log("Cancel");
+        }
+            break;
+        default:
+            break;
+    }
+}
 
 
-//
+//sdk
+void gameOverLayer::shareCallBack1()
+{
+
+
+    int picNum2=UserDefault::getInstance()->getIntegerForKey("PIC2",0);
+    char buf123[128];
+    sprintf(buf123, "%d.png",picNum2);
+    std::string stringBuf123=buf123;
+    //savePic
+    std::string path=FileUtils::getInstance()->getWritablePath();
+    std::string fullPath=path+stringBuf123;
+    utils::captureScreen(CC_CALLBACK_0(gameOverLayer::capCallBack1, this), fullPath);
+
+}
+   extern  void shareContentResultHandler(int seqId, cn::sharesdk::C2DXResponseState state, cn::sharesdk::C2DXPlatType platType, __Dictionary *result);
+
+//sdkcallback
+void gameOverLayer::capCallBack1()
+{
+    
+    int picNum=UserDefault::getInstance()->getIntegerForKey("PIC2",0);
+    char buf0[128];
+    sprintf(buf0, "%d.png",picNum);
+    std::string stringBuf0=buf0;
+  
+    
+    std::string path=FileUtils::getInstance()->getWritablePath();
+    std::string fullPath=path+stringBuf0;
+    
+    picNum++;
+    UserDefault::getInstance()->setIntegerForKey("PIC2", picNum);
+    
+    //分享内容
+    __Dictionary *content = __Dictionary::create();
+    content -> setObject(__String::create("stars for u"), "text");
+    content -> setObject(__String::create(fullPath), "image");
+    content -> setObject(__String::create("摘星星"), "title");
+    content -> setObject(__String::create("www.baidu.com"), "url");
+    content -> setObject(__String::createWithFormat("%d", cn::sharesdk::C2DXContentTypeImage), "type");
+    
+    //坐标转换
+    Point point=Director::getInstance()->getVisibleSize();
+    //分享
+    cn::sharesdk::C2DXShareSDK::showShareMenu(NULL,content,0,0,shareContentResultHandler);
+
+}
+
+
+//结束确定
 
 void gameOverLayer::labelOverCallback2()
 {
 
 
 
-
-
-
-
+    gsm->goBookLayer();
 
 }
