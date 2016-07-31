@@ -12,7 +12,7 @@
 #include "ConstellationSprite.hpp"
 #include <string>
 #include "C2DXShareSDK.h"
-
+#include "Header.h"
 
 //create()方法
 MenuLayer* MenuLayer::create(int starNum,int shinStarNum,int collNum)
@@ -544,24 +544,24 @@ bool MenuLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event)
                 growth++;
                 UserDefault::getInstance()->setIntegerForKey("GROWTH", growth);
                 //设置age
-                if (growth<=5&& growth>=1)
+                if (growth<=AGE10&& growth>=1)
                 {
                     UserDefault::getInstance()->setIntegerForKey("age", 10);
                     
                 }
-                else if (growth>5&&growth<10)
+                else if (growth>AGE10&&growth<AGE15)
                 {
                  UserDefault::getInstance()->setIntegerForKey("age", 15);
                 
                 }
-                else if (growth>10&&growth<15)
+                else if (growth>AGE15&&growth<AGE20)
                 {
                     UserDefault::getInstance()->setIntegerForKey("age", 20);
                     
                 }
                 
                 
-                else if(growth>15)
+                else if(growth>AGE20)
                 {
                     UserDefault::getInstance()->setIntegerForKey("age", 25);
                     
@@ -705,22 +705,22 @@ void MenuLayer::timerFunc(float dt)
         growth++;
         UserDefault::getInstance()->setIntegerForKey("GROWTH", growth);
         //设置age
-        if (growth<=5&& growth>=1)
+        if (growth<=AGE10&& growth>=1)
         {
             UserDefault::getInstance()->setIntegerForKey("age", 10);
             
         }
-        else if (growth>5&&growth<10)
+        else if (growth>AGE10&&growth<AGE15)
         {
             UserDefault::getInstance()->setIntegerForKey("age", 15);
             
         }
-        else if (growth>10&&growth<15)
+        else if (growth>AGE15&&growth<AGE20)
         {
             UserDefault::getInstance()->setIntegerForKey("age", 20);
             
         }
-        else if(growth>15)
+        else if(growth>AGE20)
         {
         UserDefault::getInstance()->setIntegerForKey("age", 25);
         
@@ -943,22 +943,22 @@ void MenuLayer::goBackCallBack(cocos2d::Ref *pSender)
     growth++;
     UserDefault::getInstance()->setIntegerForKey("GROWTH", growth);
     //设置age
-    if (growth<=5&& growth>=1)
+    if (growth<=AGE10&& growth>=1)
     {
         UserDefault::getInstance()->setIntegerForKey("age", 10);
         
     }
-    else if (growth>5&&growth<10)
+    else if (growth>AGE10&&growth<AGE15)
     {
         UserDefault::getInstance()->setIntegerForKey("age", 15);
         
     }
-    else if (growth>10&&growth<15)
+    else if (growth>AGE15&&growth<AGE20)
     {
         UserDefault::getInstance()->setIntegerForKey("age", 20);
         
     }
-    else if(growth>15)
+    else if(growth>AGE20)
     {
         UserDefault::getInstance()->setIntegerForKey("age", 25);
         
