@@ -120,6 +120,7 @@
 		FFD606041D23D293009304F8 /* info1.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD606031D23D293009304F8 /* info1.png */; };
 		FFD606061D23D387009304F8 /* info2.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD606051D23D387009304F8 /* info2.png */; };
 		FFD606081D23D501009304F8 /* info3.png in Resources */ = {isa = PBXBuildFile; fileRef = FFD606071D23D501009304F8 /* info3.png */; };
+		FFDA57281D4D90A3007D4B13 /* 12.png in Resources */ = {isa = PBXBuildFile; fileRef = FFDA57271D4D90A3007D4B13 /* 12.png */; };
 		FFE122E71D44A47B00BCE505 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE122E61D44A47B00BCE505 /* libicucore.tbd */; };
 		FFE122E91D44A48100BCE505 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE122E81D44A48100BCE505 /* libz.tbd */; };
 		FFE122EB1D44A48B00BCE505 /* libstdc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FFE122EA1D44A48B00BCE505 /* libstdc++.tbd */; };
@@ -331,6 +332,7 @@
 		FFD606031D23D293009304F8 /* info1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info1.png; sourceTree = "<group>"; };
 		FFD606051D23D387009304F8 /* info2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info2.png; sourceTree = "<group>"; };
 		FFD606071D23D501009304F8 /* info3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info3.png; sourceTree = "<group>"; };
+		FFDA57271D4D90A3007D4B13 /* 12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 12.png; sourceTree = "<group>"; };
 		FFE122E61D44A47B00BCE505 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/lib/libicucore.tbd; sourceTree = DEVELOPER_DIR; };
 		FFE122E81D44A48100BCE505 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/lib/libz.tbd; sourceTree = DEVELOPER_DIR; };
 		FFE122EA1D44A48B00BCE505 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/usr/lib/libstdc++.tbd"; sourceTree = DEVELOPER_DIR; };
@@ -550,6 +552,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FFDA57271D4D90A3007D4B13 /* 12.png */,
 				FF7B87DE1D2A0BC900BE5C8F /* diary */,
 				FF9657A41D2679D80070BB9B /* stars */,
 				FFD605E01D23BF6F009304F8 /* xingzuo_2 */,
@@ -1074,6 +1077,7 @@
 				FFD605F81D23BF90009304F8 /* tianxie.png in Resources */,
 				FFE1234C1D44A4E300BCE505 /* read_me.txt in Resources */,
 				FF9E5FAF1D44C4FC006D4D5A /* Icon-76.png in Resources */,
+				FFDA57281D4D90A3007D4B13 /* 12.png in Resources */,
 				FFE1234F1D44A4E300BCE505 /* ShareSDK.bundle in Resources */,
 				FFD605F41D23BF90009304F8 /* shuangyu.png in Resources */,
 				FFD605D61D2278C2009304F8 /* board.png in Resources */,

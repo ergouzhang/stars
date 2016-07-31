@@ -11,7 +11,7 @@
 #include <algorithm>
 #include "MenuLayer.hpp"
 #include "C2DXShareSDK.h"
-
+#include "Header.h";
 using namespace cn::sharesdk;
 
 
@@ -456,7 +456,9 @@ void gameOverLayer::labelOverCallback()
         }
         
     }
-    
+    //测试用神龙
+
+    this->dragon();
       //收集12个星座后
     if (dragon==12)
     {
@@ -492,11 +494,15 @@ void gameOverLayer::dragon()
 
     for (int i=0; i<12; i++)
     {
-        
-        
+        conllenVecetor.at(i)->runAction(Sequence::create(DelayTime::create(5.0),Repeat::create(RotateBy::create(0.5, 360), 2),ScaleTo::create(0.1, 0.5),RemoveSelf::create(), NULL));
     }
 
-
+    auto dragon=Sprite::create("12.png");
+    dragon->setPosition(size.width/2,size.height/2);
+    this->addChild(dragon);
+    dragon->setScale(0);
+    dragon->runAction(Sequence::create(DelayTime::create(8.0f), ScaleTo::create(0.1, 0.5),NULL));
+    
 }
 
 
