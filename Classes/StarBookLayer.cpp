@@ -209,9 +209,9 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                                                          ScaleTo::create(0.1, 1),
                                                          NULL));
                 markButton25->setPosition(Point(889,213));
-                auto menu=Menu::create(markButton25, NULL);
-                menu->setPosition(0,0);
-                this->addChild(menu,markIndex,54);
+                auto menu25=Menu::create(markButton25, NULL);
+                menu25->setPosition(0,0);
+                this->addChild(menu25,markIndex,54);
                 
                 //大透明背景
                 //日记打字效果
@@ -223,13 +223,13 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 //labelText->setVisible(false);
 
                 dirayString=age25String;
-            
+            // labelText->setString(age25String);
 //                labelText->setPosition(size.width/2+50,size.height/2);
 //                labelText->setScale(1.5);
                 //labelText->runAction(Sequence::create(DelayTime::create(10.0),Spawn::create(MoveTo::create(1.0f, Point(size.width/4+50,size.height/2)), ScaleTo::create(1.0f, 1.0f),NULL), NULL));
               //  this->addChild(labelText,markIndex+11);
                                //labelText->runAction(Sequence::create(FadeIn::create(1.0), NULL));
-                this->schedule(schedule_selector(StarBookLayer::textOut), 0.05);
+               this->schedule(schedule_selector(StarBookLayer::textOut), 0.05);
                 
                 
             }
@@ -243,9 +243,9 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
             
             auto markButton25=MenuItemSprite::create(bookMarkSprite25, bookMarkSprite25_s, CC_CALLBACK_1(StarBookLayer::label25Callback, this));
             markButton25->setPosition(Point(889,213));
-            auto menu=Menu::create(markButton25, NULL);
-            menu->setPosition(0,0);
-            this->addChild(menu,markIndex,54);
+            auto menu25=Menu::create(markButton25, NULL);
+            menu25->setPosition(0,0);
+            this->addChild(menu25,markIndex,54);
             
           
             //如果是当前mark，则显示其内容
@@ -270,12 +270,12 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 
                 UserDefault::getInstance()->setIntegerForKey("20", 0);
                 
-                auto bookMarkSprite25=Sprite::create("mark20.png");
-                auto bookMarkSprite25_s=Sprite::create("mark20.png");
-                bookMarkSprite25_s->setScale(1.2);
+                auto bookMarkSprite20=Sprite::create("mark20.png");
+                auto bookMarkSprite20_s=Sprite::create("mark20.png");
+                bookMarkSprite20_s->setScale(1.2);
                 
-                auto markButton25=MenuItemSprite::create(bookMarkSprite25, bookMarkSprite25_s, CC_CALLBACK_1(StarBookLayer::label25Callback, this));
-                markButton25->runAction(Sequence::create(ScaleTo::create(0, 0),
+                auto markButton20=MenuItemSprite::create(bookMarkSprite20, bookMarkSprite20_s, CC_CALLBACK_1(StarBookLayer::label20Callback, this));
+                markButton20->runAction(Sequence::create(ScaleTo::create(0, 0),
                                                         
                                                          ScaleTo::create(0.1, 0.8),
                                                          
@@ -285,10 +285,10 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                                                          ScaleTo::create(0.1, 1),
 
                                                          NULL));
-                markButton25->setPosition(Point(889,296));
-                auto menu=Menu::create(markButton25, NULL);
+                markButton20->setPosition(Point(889,296));
+                auto menu=Menu::create(markButton20, NULL);
                 menu->setPosition(0,0);
-                this->addChild(menu,markIndex-1,54);
+                this->addChild(menu,markIndex-1,53);
                 
                 //大透明背景
                 //日记打字效果
@@ -299,6 +299,7 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
 //                bg2->runAction(Sequence::create(DelayTime::create(15.0),RemoveSelf::create(), NULL));
                  //labelText->setVisible(false);
                 dirayString=age20String;
+                 //labelText->setString(age20String);
 //                labelText->setPosition(size.width/2+50,size.height/2);
 //                labelText->setScale(1.5);
 //                labelText->runAction(Sequence::create(DelayTime::create(15.0),Spawn::create(MoveTo::create(1.0f, Point(size.width/4+50,size.height/2)), ScaleTo::create(1.0f, 1.0f),NULL), NULL));
@@ -343,7 +344,7 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 auto bookMarkSprite25_s=Sprite::create("mark15.png");
                 bookMarkSprite25_s->setScale(1.2);
                 
-                auto markButton25=MenuItemSprite::create(bookMarkSprite25, bookMarkSprite25_s, CC_CALLBACK_1(StarBookLayer::label25Callback, this));
+                auto markButton25=MenuItemSprite::create(bookMarkSprite25, bookMarkSprite25_s, CC_CALLBACK_1(StarBookLayer::label15Callback, this));
                 markButton25->runAction(Sequence::create(ScaleTo::create(0, 0),
                                                         
                                                          ScaleTo::create(0.1, 0.8),
@@ -357,7 +358,7 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 markButton25->setPosition(Point(889,379));
                 auto menu=Menu::create(markButton25, NULL);
                 menu->setPosition(0,0);
-                this->addChild(menu,markIndex-2,54);
+                this->addChild(menu,markIndex-2,52);
                 
                 
                 
@@ -369,6 +370,7 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
 //                bg2->setOpacity(255);
 //                bg2->runAction(Sequence::create(DelayTime::create(5.0),RemoveSelf::create(), NULL));
                 dirayString=age15String;
+                //labelText->setString(age15String);
 //                labelText->setPosition(size.width/2+50,size.height/2);
 //                labelText->setScale(1.5);
 //                labelText->runAction(Sequence::create(DelayTime::create(5.0),Spawn::create(MoveTo::create(1.0f, Point(size.width/4+50,size.height/2)), ScaleTo::create(1.0f, 1.0f),NULL), NULL));
@@ -412,7 +414,7 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 auto bookMarkSprite25_s=Sprite::create("mark10.png");
                 bookMarkSprite25_s->setScale(1.2);
                 
-                auto markButton25=MenuItemSprite::create(bookMarkSprite25, bookMarkSprite25_s, CC_CALLBACK_1(StarBookLayer::label25Callback, this));
+                auto markButton25=MenuItemSprite::create(bookMarkSprite25, bookMarkSprite25_s, CC_CALLBACK_1(StarBookLayer::label10Callback, this));
                 markButton25->runAction(Sequence::create(ScaleTo::create(0, 0),
                                                          
                                                          ScaleTo::create(0.1, 0.8),
@@ -426,7 +428,7 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
                 markButton25->setPosition(Point(889,462));
                 auto menu=Menu::create(markButton25, NULL);
                 menu->setPosition(0,0);
-                this->addChild(menu,markIndex-3,54);
+                this->addChild(menu,markIndex-3,51);
                 
                 
                 //大透明背景
@@ -438,11 +440,12 @@ void  StarBookLayer::BookMark(int bookMarkIndex)
 //                bg2->runAction(Sequence::create(DelayTime::create(5.0),RemoveSelf::create(), NULL));
 //                
                 dirayString=age10String;
+                // labelText->setString(age10String);
 //                labelText->setPosition(size.width/2+50,size.height/2);
 //                labelText->setScale(1.5);
 //                labelText->runAction(Sequence::create(DelayTime::create(5.0),Spawn::create(MoveTo::create(1.0f, Point(size.width/4+50,size.height/2)), ScaleTo::create(1.0f, 1.0f),NULL), NULL));
 //                
-                this->schedule(schedule_selector(StarBookLayer::textOut), 0.05);
+               this->schedule(schedule_selector(StarBookLayer::textOut), 0.05);
                 
                 
                          }
@@ -914,7 +917,7 @@ bool StarBookLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event)
                                                            
                                                            NULL));
 
-                this->addChild(bg,100,123);
+                this->addChild(bg,1000,123);
                 auto conllentSprite=Sprite::create();
                 conllentSprite->setPosition(size.width/4,3*size.height/4);
                 

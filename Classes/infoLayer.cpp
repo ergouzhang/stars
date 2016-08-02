@@ -54,6 +54,7 @@ bool infoLayer::init()
     Relation= UserDefault::getInstance()->getIntegerForKey("RELATION", 0);
     
     //成长值
+    UserDefault::getInstance()->setIntegerForKey("GROWTH", 0);
     growth= UserDefault::getInstance()->getIntegerForKey("GROWTH", 0);
     
     
@@ -490,7 +491,7 @@ bool infoLayer::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event)
         if (stars->starsVector.empty())
         {
             //成长值＋＋
-            growth++;
+            growth=1;
             UserDefault::getInstance()->setIntegerForKey("GROWTH", growth);
             //设置age
            
@@ -597,7 +598,7 @@ void infoLayer::timerFunc(float dt)
     //达到海平面
     if (moon->getPositionY() <=(backGround2->getContentSize().height-moon->getContentSize().height))
     {
-        growth++;
+        growth=1;
         UserDefault::getInstance()->setIntegerForKey("GROWTH", growth);
         //设置age
             UserDefault::getInstance()->setIntegerForKey("age", 10);

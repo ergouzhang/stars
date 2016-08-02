@@ -458,7 +458,7 @@ void gameOverLayer::labelOverCallback()
     }
     //测试用神龙
 
-    this->dragon();
+    //this->dragon();
       //收集12个星座后
     if (dragon==12)
     {
