@@ -28,7 +28,16 @@ randomStars::randomStars(Layer* layerIn,int starNum,int shineStarNum,int constel
 
 void randomStars::randomPosition()
 
-{   std::srand(unsigned(time(NULL)));
+{
+    //随机数的产生,使用reverse方法增大随机性
+    auto myTime=time(NULL);
+    std::string timeBuf;
+    timeBuf= std::to_string(myTime);
+    std::reverse(timeBuf.begin(), timeBuf.end());
+    myTime=atol(timeBuf.c_str());
+    
+    std::srand(myTime);
+    //std::srand(unsigned(time(NULL)));
     
    //随机颜色
     SpriteBatchNode* starsBatchNode_1=SpriteBatchNode::create("star_1_s.png");
@@ -66,8 +75,9 @@ void randomStars::randomPosition()
     for (int i=0; i<starNum; i++)
     {
         //随机坐标
-        float x=random(0.2f, 0.9f)*size.width;
+        float x=random(0.3f, 0.9f)*size.width;
         float y=((size.height/5)*2.5+rand_0_1()*size.height/5)*0.8;
+     
         
         Sprite* star;
         //创建星星

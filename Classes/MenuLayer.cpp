@@ -109,7 +109,7 @@ bool MenuLayer::init()
     
     
 //暂停按钮
-    auto pasueLabel=Label::createWithTTF("退出", "fonts/china.ttf", 40);
+    auto pasueLabel=Label::createWithTTF("退出", "fonts/china.ttf", 30);
     pasueLabel->setColor(Color3B::RED);
     auto pasueButton=MenuItemLabel::create(pasueLabel,CC_CALLBACK_1(MenuLayer::goBackCallBack, this));
     pasueButton->setPosition(pasueButton->getContentSize().width/2+5,size.height-pasueButton->getContentSize().height);
