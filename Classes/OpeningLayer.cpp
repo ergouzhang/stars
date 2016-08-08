@@ -182,3 +182,10 @@ void OpeningLayer::createPlist()
     }
 }
 
+
+void OpeningLayer::onExit()
+{
+    Layer::onExit();
+    CC_SAFE_DELETE(star);
+
+}

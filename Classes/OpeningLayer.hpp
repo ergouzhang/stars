@@ -40,6 +40,9 @@ public:
     //星星
     randomStars* star=new randomStars(this,10,6,0);
     
+    //onExit()方法
+    virtual void onExit();
+    
 //plist建立
     void createPlist();
 

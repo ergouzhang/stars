@@ -98,6 +98,9 @@ public:
     void shareCallBack();
     MenuItemLabel* shareButton;
     void capCallBack();
+    
+    //onExit()方法//删除stars
+    virtual void onExit();
  
 };
 

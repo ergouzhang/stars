@@ -966,3 +966,12 @@ void MenuLayer::goBackCallBack(cocos2d::Ref *pSender)
     
     gsm->goBookLayer();
 }
+
+//删除stars
+void MenuLayer::onExit()
+{
+
+    Layer::onExit();
+    CC_SAFE_DELETE(stars);
+
+}
